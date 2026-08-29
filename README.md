@@ -6,11 +6,11 @@ A mobile-first one-page website **proposal** for **Gus & Son Barbershop** (also 
 
 There is no online booking and no online payment. The real shop is walk-in. This page only helps people **call**, **get directions**, or open the shop’s **Facebook** page.
 
-Live URL (once GitHub Pages is on): [https://kunyi523.github.io/gus-and-son/](https://kunyi523.github.io/gus-and-son/)
+Live URL: [https://kunyi523.github.io/gus-and-son/](https://kunyi523.github.io/gus-and-son/)
 
 ## How to open
 
-Open `index.html` in a browser (double-click it, or drag it into a tab).
+The whole site is one self-contained file: `index.html` (CSS is inlined). Open that file in a browser, or visit the Pages URL on a phone.
 
 Optional local server, from this folder:
 
@@ -22,20 +22,20 @@ Then visit http://localhost:8080
 
 ## GitHub Pages
 
-The site is static files at the **repository root** (`index.html`, `styles.css`).
+Static files live at the **repository root**. A workflow at `.github/workflows/pages.yml` deploys from `main` with `actions/checkout`, `configure-pages`, `upload-pages-artifact` (path `.`), and `deploy-pages`.
 
-To publish:
+If that workflow is not in the repo yet (GitHub blocks workflow-file writes without the `workflow` token scope), you can still publish by branch:
 
-1. Repo **Settings → Pages**
-2. Build and deployment → Source: **Deploy from a branch**
-3. Branch: **main**, folder: **/ (root)**
-4. Save
+1. **Settings → Pages**
+2. Build and deployment → Source: **GitHub Actions** (preferred) or **Deploy from a branch** → **main** / **/** (root)
+3. Save, then re-run the workflow if using Actions
 
 GitHub will serve the site at `https://kunyi523.github.io/gus-and-son/`.
 
 ## What’s on the page
 
 - Shop name, King Street East address, click-to-call (`tel:+19055451945`)
+- Thumb-sized **Call** and **Directions** buttons
 - Hours (closed Monday, Tuesday, Sunday)
 - Licensed Unsplash / Pexels atmosphere photos — **not** photos of this shop
 - Real customer quotes from public listings (no invented names, stars, or dates)
@@ -43,4 +43,4 @@ GitHub will serve the site at `https://kunyi523.github.io/gus-and-son/`.
 - Facebook link
 - A discreet footer stating this is an unofficial proposal
 
-Built as a simple HTML + CSS one-pager (a small script only highlights today’s hours in the America/Toronto timezone).
+Built as a simple HTML one-pager (a small script only highlights today’s hours in the America/Toronto timezone).
